@@ -1,0 +1,33 @@
+<h3><i class="fa fa-user" aria-hidden="true"></i> Se connecter</h3>
+
+	
+<fieldset>
+	
+
+	<legend class="legend">Identifiants</legend>
+		<form class="form" method="post" action="processLogin.php">
+			<ul>
+				<li>
+					<label for="mailLogin">Mail<span> *</span></label>
+					<input type="mail" id="mailLogin" name="mail-login" required="required">
+				</li>
+				<p id="aideMail"></p>
+				<li>
+					<label for="password-login">Mot de passe<span> *</span></label>
+					<input id="password-login" name="password-login" required="required" type="password">
+					
+				</li>
+				<p id="aidePassword"></p>
+			</ul>
+                                
+
+				<div class="envoi">
+					<button class="btn-submit" id="loginSubmit" type="submit">Envoyer</button>
+					<button class="btn-reset" type="reset">Annuler</button>
+				</div>
+                                <p id="asterisque">Les champs marqués par un (*) sont obligatoires.</p>	            
+		</form>
+</fieldset>
+<script type="text/javascript" src="public/js/donnees.js"></script>
+<script type="text/javascript" src="public/js/functions.js"></script>
+<script type="text/javascript" src="public/js/login.js"></script>	

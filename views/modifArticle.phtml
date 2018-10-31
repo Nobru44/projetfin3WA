@@ -1,0 +1,88 @@
+<h2><i class="fas fa-cogs"></i> Administration</h2>
+
+<h3><i class="fas fa-eraser"></i> Modifier un article</h3>
+
+
+<form class="modif-form" action="addArticle.php" method="POST" enctype="multipart/form-data">
+	<input type="hidden" name="id_article" value="<?=$article['id_article']?>">
+	<div id="sample">
+
+			
+		<script type="text/javascript" src="public/js/nicEdit.js"></script>			
+
+		<script type="text/javascript"> 
+			bkLib.onDomLoaded(function() {
+				new nicEditor({buttonList : ['bold','italic','underline','strikeThrough', 'unlink', 'link', 'html']}).panelInstance('title');
+				new nicEditor({buttonList : ['bold','italic','underline', 'unlink', 'link', 'strikeThrough', 'html']}).panelInstance('content');
+			});
+
+		</script>
+
+     	
+		<label>Titre</label>
+			<textarea id="title" name="title"><?=$article['title']?></textarea>
+		<label>Texte</label>
+		<textarea name="content" id="content"><?=$article['content']?></textarea>
+	</div>
+	<?php if(!empty($article['url_photo'])):?>
+
+			<label>Photo</label>
+			<img class="display-image" src="<?= $article['url_photo']?>">
+			<input type="hidden" id="url_photo" name="url_photo" value="<?=$article['url_photo']?>">
+			<div class="sup">
+				<i class="fas fa-trash-alt"></i>
+				<input type="checkbox" id="sup-photo">
+			</div>
+	<?php else :?>
+
+
+		<label for="mon_fichier2">Photo (format JPG | max. 1 Mo)</label>
+		<input type="hidden" name="MAX_FILE_SIZE" value="1048576">
+    	<input type="file" name="mon_fichier2" id="mon_fichier2" accept=".jpg, .jpeg">
+    	<label for="title_photo">Nom de la photo</label>
+		<input type="text" name="title_photo" id="title_photo">
+
+
+	<?php endif ?>
+	<?php if (!empty($article['url_media'])):?>
+
+		<label>Modifier ou supprimer l'adresse de la vidéo</label>
+		<div id="video"><?=$article['url_media']?></div>
+
+		<textarea id="url_media" name="url_media"><?=$article['url_media']?></textarea>
+
+		<div class="sup"><i class="fas fa-trash-alt"></i>
+		<input type="checkbox" id="sup-video"></div> 
+	<?php else :?>
+		<label for="vidéo">Rentrez l'adresse de la vidéo</label>
+    	<textarea name="url_media" id="url_media"></textarea>
+
+	<?php endif ?>
+
+		<label>Categorie</label>
+		<select name="id_category">
+			<option value="1">L'image du mois</option>
+			<option value="2">Documentation</option>
+			<option value="3">Insolite</option>
+			<option value="4">Recherche</option>
+			<option value="5">Environnement</option>
+			<option value="6">Toxicologie</option>
+		</select>
+		<label>Auteur</label>
+		<select name="id_author">
+			<option value="1">Jean-Pascal Quod</option>
+			<option value="2">La rédaction</option>
+		</select>
+<div class="envoi">
+	<button class="btn-submit">Valider</button>
+	<button class="btn-reset" type="reset">Annuler</button>
+</div>
+
+</form>
+<form class="modif-form" action="delete.php" method="POST">
+		<input type="hidden" name="id_article" value="<?=$article['id_article']?>">
+		<button class="btn-delete" type="submit">Supprimer</button>
+</form>
+<script type="text/javascript" src="public/js/donnees.js"></script>
+<script type="text/javascript" src="public/js/functions.js"></script>
+<script type="text/javascript" src="public/js/modif.js"></script>

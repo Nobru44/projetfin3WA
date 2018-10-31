@@ -1,0 +1,129 @@
+<h2><i class="fas fa-cogs"></i> Administration</h2>
+
+<h3><i class="fas fa-eraser"></i> Modifier une algue</h3>
+<form class="modif-form" action="processModifAlgue.php" method="POST" enctype="multipart/form-data">
+	<input type="hidden" name="id_algue" value="<?=$algue['id_algue']?>">
+	<input type="hidden" name="id_author" value="<?=$algue['id_author']?>">
+
+	<div id="sample">
+		<script type="text/javascript" src="public/js/nicEdit.js"></script>			
+
+		<script type="text/javascript"> 
+			bkLib.onDomLoaded(function() {
+				new nicEditor({buttonList : ['bold','italic','underline','strikeThrough', 'unlink', 'link', 'html']}).panelInstance('name');
+				new nicEditor({buttonList : ['bold','italic','underline', 'unlink', 'link', 'strikeThrough', 'html']}).panelInstance('description');
+				new nicEditor({buttonList : ['bold','italic','underline', 'unlink', 'link', 'strikeThrough', 'html']}).panelInstance('utilisation');
+			});
+
+		</script>
+		    
+		<label>Nom</label>
+		<textarea id="name" name="name" cols="5" rows="2"><?=$algue['name']?></textarea>
+		<label>Description</label>
+		<textarea id="description" name="description" cols="60" rows="10" wrap="hard"><?=$algue['description']?></textarea>
+		<label>Quels usages</label>
+		<textarea id="utilisation" name="utilisation" cols="60" rows="10" wrap=""><?=$algue['utilisation']?></textarea>
+		 <div id="myPanel"></div>
+	</div>
+<?php if(!empty($algue['image_url'])):?>
+		<label>Photo</label>
+		<img class="display-image" src="<?= $algue['image_url']?>">
+		<input type="hidden" id="url_photo" name="image_url" value="<?=$algue['image_url']?>">
+		
+		<textarea id="title_photo" name="title_photo"><?=$algue['title_photo']?></textarea>
+
+		
+		<div class="sup">
+			<i class="fas fa-trash-alt"></i>
+			<input type="checkbox" id="sup-photo">
+		</div>
+		
+
+
+
+
+<?php else :?>
+		<label class="label_fichier" for="mon_fichier3">Photo (format JPG | max. 1 Mo)</label>
+     	<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+     	<input type="file" name="mon_fichier3" id="mon_fichier3" accept=".jpg, .jpeg"/>
+     	<div class="preview">
+     	 	
+  		</div>
+		<label for="title_photo">Titre du fichier (max. 50 caractères)</label>
+		<input type="text" name="title_photo" id="title_photo">
+		<script src="public/js/test3.js"></script>
+<?php endif ?>
+	<label>Category</label>
+	<select name="category_id">
+		<option value="1">Algue verte</option>
+		<option value="2">Algue rouge</option>
+		<option value="3">Algue brune</option>
+		<option value="4">Indéterminée</option>
+	</select>
+	<label>A quel endroit ?</label>  
+	  <div type="hidden">
+<script> var result = <?php echo($json); ?>;
+</script>
+
+	  </div>
+	  <div id="map"></div>
+
+	  <input type="hidden" id="lat" name="lat">
+	  <input type="hidden" id="long" name="long">
+	
+	<label>Fiche wikipédia</label>
+	<input type="text" name="url_info" value="<?=$algue['url_info']?>">
+
+	
+	<label>Statut</label>
+	<select name="status">
+		<option value="verification">En cours de vérification</option>
+		<option value="verified">Vérifiée</option>
+	</select>
+	<div class="envoi">
+		<button class="btn-submit">Valider</button>
+		<button class="btn-reset" type="reset">Annuler</button>
+	</div>
+</form>
+<div>
+	<form class="modif-form" action="delete.php" method="POST">
+		<input type="hidden" name="id_algue" value="<?=$algue['id_algue']?>">
+		<button class="btn-delete" type="submit">Supprimer</button>
+	</form>
+	<form class="modif-form" action="extractCoord.php" method="GET">
+		<input type="hidden" name="id_algue" value="<?= $algue['id_algue']?>">
+		<button class="btn-submit btn-extract" type="submit">Extraire les coordonnées</button>
+	</form>
+</div>
+<?php if(!empty($listCoord)):?>
+	<table id="coord">
+	       <caption>Liste des signalements pour cette algue</caption>
+               <tbody>
+<?php foreach($listCoord AS $coord):?>
+			<tr>
+				<td><?= $coord['id_coord']?></td>
+				<td><?= $coord['latitude']?></td>
+				<td><?= $coord['longitude']?></td>
+				<td><a class="btn-admin" href="delete.php?idCoord=<?=$coord['id_coord']?>">Supprimer</a></td>
+			</tr>
+<?php endforeach ?>
+		</tbody>
+		<thead>	
+			<tr>
+				<td>Signalement</td>
+				<td>Latitude</td>
+				<td>Longitude</td>
+				<td></td>
+			</tr>
+		</thead>
+	</table>
+<?php	endif ?>
+
+ <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+
+<script type="text/javascript" src="public/js/donnees.js"></script>
+<script type="text/javascript" src="public/js/functions.js"></script>
+<script src="public/js/mapValidation.js"></script>
+<script type="text/javascript" src="public/js/modif.js"></script>	

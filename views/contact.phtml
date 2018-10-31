@@ -1,0 +1,35 @@
+<h3><i class="fas fa-envelope"></i>
+Contact</h3>
+
+	
+<fieldset>
+	
+
+	<legend class="legend">Votre message</legend>
+	<form class="form" method="post" action="contact.php">
+		<ul>
+			<li>
+				<label for="firstname">Nom</label>
+				<input type="text" id="firstname" name="name">
+			</li>
+			<p id="aidefirstname"></p>
+			<li>
+				<label for="mail">Mail</label>
+				<input type="mail" id="mail" name="mail" required="required">
+			</li>
+			<p id="aideMail"></p>
+			<li>
+				<label for="message">Message</label>
+				<textarea id="message" name="message" rows="10" cols="78" required="required"></textarea>
+			</li>
+			<p id="aideMessage"></p>
+		</ul>
+			<div class="envoi">
+				<button class="btn-submit" type="submit">Envoyer</button>
+				<button class="btn-reset" type="reset" >Annuler</button>
+			</div>
+	</form>
+</fieldset>
+<script type="text/javascript" src="public/js/donnees.js"></script>
+<script type="text/javascript" src="public/js/functions.js"></script>
+<script type="text/javascript" src="public/js/contact.js"></script>

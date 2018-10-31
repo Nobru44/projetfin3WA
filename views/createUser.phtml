@@ -1,0 +1,49 @@
+<section class="last">  
+  <h3><i class="fa fa-user" aria-hidden="true"></i> Créer un compte</h3>
+  <p class="presentation">Bienvenue à tous. Voici la première étape pour participer au projet de recensement de la biodiversité algale de La Réunion grâce à notre site. Une fois votre inscription validée, vous pourrez soumettre vos observations.</p>
+  <fieldset>
+	<legend class="legend">Vos coordonnées</legend>
+	<form class="form" method="post" action="addUser.php">
+		
+		
+		<ul>
+			<li>
+				<label for="firstname">Prénom <span>*</span></label>
+				<input type="text" id="firstname" name="firstname">
+			</li>
+			<p id="aidefirstname"></p>
+			<li>
+				<label for="lastname" >Nom <span>*</span></label >
+				<input type="text" id="lastname" name="lastname" required="required">
+			</li>
+			<p id="aidelastname"></p>
+			<li>
+				<label for="mail" >Mail <span>*</span></label>
+				<input type="email" id="mail" class="champ" name="mail" size="30" required="required">	
+			</li>
+			<p id="aideMail"></p>
+			<li>
+				<label for="password">Mot de passe <span>*</span></label>
+				<input type="password" id="password" name="password" required="required">	
+			</li>
+			<p id="aidePassword"></p>
+			<li>
+				<label for="confirmation" >Confirmation <span>*</span></label>
+				<input type="password" id="confirmation" name="confirmation" required="required">
+			</li>
+			<p id="aideConfirmation"></p>
+		</ul>
+		
+		<div class="envoi">
+			<button id="btn-create" class="btn-submit" type="submit">Envoyer</button>
+			<button class="btn-reset" type="reset">Annuler</button>
+		</div>
+		<p id="asterisque">Les champs marqués par un (*) sont obligatoires.</p>	
+	</form>
+
+
+  </fieldset>
+</section>
+<script type="text/javascript" src="public/js/donnees.js"></script>
+<script type="text/javascript" src="public/js/functions.js"></script>
+<script type="text/javascript" src="public/js/creation.js"></script>

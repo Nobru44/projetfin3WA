@@ -1,0 +1,31 @@
+<section class="news-article">
+	
+
+	<?php	foreach($articlesList AS $article):?>
+		<article>
+			<h6><?=$article['name_category']?></h6>
+			<h4><?=$article['title']?></h4>
+			
+	<?php if(!empty($article['url_media']) AND !empty($article['url_photo'])):?>
+				<div class="medias">
+					<?=$article['url_media']?>
+					<img class="news-images" src="<?=$article['url_photo']?>">
+				</div>
+	<?php elseif (!empty($article['url_media']) AND empty($article['url_photo'])):?>	
+				<div class="medias">
+					<?=$article['url_media']?>
+				</div>
+	<?php elseif (!empty($article['url_photo']) AND empty($article['url_media'])):?>	
+				<div class="medias">
+					<img class="news-images" src="<?=$article['url_photo']?>">
+				</div>
+	<?php endif ?>
+			<p><?=$article['content']?></p>
+			<div class="clear"></div>
+		        <p class="sign">Posté par <?=$article['firstname']?> <?=$article['lastname']?></p>
+		        <p class="date">Le <?=$article['updated_at']?></p>
+		</article>
+	<?php endforeach ?>
+	
+
+</section>

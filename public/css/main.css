@@ -1,0 +1,1120 @@
+/*/////////GENERAL///////////*/
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration : none;
+  color : white;
+  text-align: center;
+}
+
+h2 {
+  width : 80%;
+  border-radius : 3%;
+  margin : 0.2em auto;
+  text-align: center;
+  color : #42AF62;
+  padding-top: 0.5em;
+  padding-bottom : 0.5em;
+}
+
+h2 span {
+  font-size: 1.9rem;
+  padding-bottom: 0.5em;
+}
+
+
+
+h3 {
+  color : #42AF62;
+  font-size : 2em;
+}
+
+figcaption {
+  font-size : 70%;
+  padding : 0.5em 0;
+}
+
+section {
+  border-bottom: 2px solid  #42AF62;
+  margin-bottom: 2em;
+  padding : 1em 0.7em;
+  padding-bottom: 3em;
+  text-align : justify;
+}
+
+p {
+  margin : 0 auto;
+}
+
+p > a {
+  color : #31a590;
+}
+
+/*/////////HEADER/////////////*/
+header {
+
+  background-image: url(../images/ernodesmis-verticillata.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #000000; 
+  margin : 0 auto;
+  padding-bottom: 1em;
+  display : flex;
+  flex-direction : column;
+  text-align: center;
+  border-bottom: 3px solid white;
+  width : 100%;
+  position : relative;
+  right: 0;
+  left: 0;
+}
+
+
+#header-title {
+  width : 100%;
+  position : relative;
+  bottom : 0;
+  padding-top : 7em;
+}
+
+#header-title img {
+  max-width : 150px;
+}
+
+
+#header-title h1 {
+  display : none;
+ 
+  color : white;
+  margin : 0;
+  padding: 1em 0;
+  text-align : center;
+  width : 100%;
+}
+
+nav {
+  display : flex;
+  width : 100%;
+}
+
+nav ul {
+  display : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  margin : 0 auto;
+  padding : 0;
+  width : 100%;
+}
+
+nav ul li {
+  width : 30%;
+  margin : 0 auto;
+  padding : 0;
+  margin-bottom : 0.5rem;
+}
+
+nav ul li a {
+  display : inline-block;
+  padding : 0.7em 1em;
+  vertical-align: center;
+  text-align : center;
+  border-top : 2px solid red;
+}
+
+.hidden {
+  display : none;
+}
+
+.clear {
+  clear : both;
+}
+
+
+/*//////NAVIGATION PRINCIPALE///////*/
+
+
+
+#nav-header-mobile {
+  padding : 0.2em;
+  padding-top : 0.8em; 
+  position : fixed;
+  right: 0;
+  left: 0;
+  z-index: 100000;
+  background-image: url(../images/ernodesmis-verticillata.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  background-position: center;
+ 
+  
+}
+
+#nav-header-mobile .fa-bars::before {
+  padding : 0.5em;
+  margin : 0 auto;
+}
+
+#nav-header-mobile i {
+  display : block;
+  color : white;
+}
+
+#nav-head {
+  display : none;
+  font-size : 1.1em;
+}
+
+#nav-header-mobile i:hover {
+  margin-bottom: 0.5em;
+}
+
+#nav-header-mobile:hover #nav-head {
+  display : block;
+}
+
+#nav-head i {
+  display : none;
+}
+#nav-head a {
+  font-weight: 600;
+}
+
+.selected a {
+  background-color: #557e03;
+}
+
+#nav-head .selected i {
+  display : block;
+  margin : 0 auto;
+}
+
+#nav-head .deploi:hover {
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav-head .deploi:hover a {
+background-color: #557e03;
+}
+
+#nav-head .deploi:hover ul {
+  display : block;
+   flex-direction: column; 
+  justify-content: center;
+  margin : 0 auto;
+}
+
+#nav-head .deploi:hover ul li {
+  margin : 0 auto;
+  text-align : center;
+  margin-bottom : 0.2em;
+  background-color: #79802e;
+  width : 80%;
+}
+
+#nav-head .deploi:hover ul li:first-child {
+  margin-top : 0.2em;
+}
+
+#nav-head .deploi:hover ul li a {
+  background-color: #79802e;
+   border-top : 2px solid #e05455;
+}
+
+/*///////// MAIN ////*/
+
+.flashbag {
+  font-size: 1.2em;
+  color : #e0514b;
+  padding : 0.3em;
+  margin : 0;
+  text-align : left;
+}
+
+.flashbag p {
+  margin : 0 auto;
+}
+
+.container {
+  width : 95%;
+  display : flex;
+  flex-direction : column;
+  background-color: #EDEDED;
+  margin : 0 auto;
+  padding : 0.5em;
+}
+
+.container p {
+  padding : 0.5em;
+}
+
+.img-right {
+  text-align: center;
+  width : 100%;
+  margin : 0 auto;
+  padding-bottom : 0.3em;
+}
+
+/*////////HOME/////////*/
+
+.intro figure {
+  display : flex;
+  flex-direction: column;
+  margin : 0;
+}
+
+.last, .catalogue, .messages, .news-article, .showalgues {
+  border : none;
+}
+
+.btn {
+  display : block;
+  width : 50px;
+  max-height: 15px;
+  border-radius : 5%;
+  font-size : 85%;
+  text-align: center;
+  vertical-align: center;
+  background-color: #18C790;
+  padding : 0.5em 0.8em;
+  margin : 0.5em;
+  float : right;
+}
+
+/*////SLIDER DE LA HOME/////*/
+#slidehome {
+  overflow: hidden;
+}
+
+#slidehome #sContent {
+  display: flex;
+  flex-direction: row;
+  margin : 0;
+  width : calc(500px * 2);
+  height :340px;
+  overflow: hidden; 
+  padding : 0;
+  animation: glisse 20s infinite linear;
+
+}
+#slidehome #sContent li {
+  margin : 0 auto;
+  width : 100%;
+}
+
+@keyframes glisse {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform : translateX(0);
+  }
+}
+
+
+/*////////TROIS FAMILLES D'ALGUES DANS HOME ET PAGE CATALOGUE/////////*/
+
+.catalogue {
+  display : flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.catalogue article {
+   padding : 0.7em;
+   margin-bottom : 0.5em;
+}
+
+.catalogue article:nth-child(odd) {
+  background-color: #d4d6cd;
+}
+
+.catalogue article:nth-child(even) {
+  background-color: #717f82;
+}
+
+.catalogue article h4 {
+  font-size : 120%;
+  color : #42AF62;
+  margin-top : 0.2em;
+  margin-bottom : 0.6em;
+}
+
+.catalogue article:nth-child(2) h4 {
+  color : #ba0a1a;
+}
+
+.catalogue article:nth-child(3) h4 {
+  color : #a5611d;
+}
+
+.catalogue img {
+  width : 100%;
+  margin-bottom: 0.5em;
+}
+
+/*/////SECTION ENVIRO DANS HOME///////*/
+
+.enviro {
+  display : flex;
+  flex-direction: column;
+}
+.enviro figure {
+  width: 100%;
+  display : flex;
+  flex-direction: column;
+  margin : 0 auto;
+  margin-bottom : 0.5em;
+}
+.enviro figure img {
+  width: 100%;
+}
+
+/*//////////FORMULAIRES ////////////*/
+/*/////////CREER UN COMPTE, SE LOGGER, SOUMETTRE UNE ALGUE////////*/
+
+
+.presentation {
+  margin :  auto;
+  margin-bottom : 2em;
+}
+
+fieldset {
+  color : #42AF62;
+  border-radius: 2%;
+  margin-bottom : 2em;
+}
+
+label span {
+   color: red;
+}
+
+textarea {
+  background-color: white;
+}
+
+.btn-submit {
+  color : white;
+  width : 80px;
+  height: 30px;
+  border-radius: 5%;
+  background-color : green;
+  margin-right: 0.3em;
+  text-align : center;
+}
+
+.btn-delete {
+  margin : 1em auto;
+  color : white;
+  width : 120px;
+  height: 30px;
+  border-radius: 5%;
+  background-color : red;
+}
+
+.btn-reset {
+  color : white;
+  width : 80px;
+  height: 30px;
+  border-radius: 5%;
+  background-color : red;
+  text-align : center;
+}
+
+.btn-extract {
+  width : 200px;
+  height: 30px;
+  background-color: grey;
+  margin : 1em auto;
+}
+
+.envoi {
+  text-align: center;
+  display : flex;
+  flex-direction : row;
+  justify-content: center;
+  margin : 0.5em;
+  margin-top : 1.5em;
+}
+
+.form {
+  text-align: left;
+  margin : 0 auto;
+  padding :0;
+}
+
+.form ul {
+  padding : 0;
+}
+
+.form ul li {
+  display : flex;
+  flex-direction : row;
+  flex-wrap: nowrap;
+  width : 100%;
+  padding : 0.3em;
+  margin : 0;
+  margin-top : 1em;
+
+}
+
+.form ul li label {
+  display : inline-block;
+  width : 30%;
+  margin : 0;
+  padding: 0 0.5em;
+  color: #1E593B;
+  font-weight: bold;
+}
+
+
+.form ul li input, .form ul li select, .form ul li textarea  {
+  width : 50%;
+  margin: 0;
+  margin-left: 5%;
+}
+
+.form .none {
+  font-size : 1em;
+  margin : 0 auto;
+  padding : 0.2em;
+}
+
+.form #asterisque {
+  color : red;
+  text-align : left;
+  margin-top : 3em;
+}
+
+.form p {
+  text-align : center;
+  font-size : 80%;
+}
+
+/*//////FORMULAIRES ADMIN//////////*/
+
+.modif-form {
+  display : flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin : 0 auto;
+  width : 80%;
+}
+
+.modif-form label i {
+  display : inline-block;
+}
+
+.modif-form #map {
+  margin : 0 auto;
+  padding : 0.3em;
+  text-align: center;
+  max-width : 400px;
+  max-height: 200px;
+}
+
+.modif-form #map .leaflet-control-zoom {
+  width : 10%;
+}
+
+.modif-form .display-image {
+  margin : 0 auto;
+  padding : 0.3em;
+  text-align: center;
+}
+
+.modif-form #sample, .modif-form label, .modif-form textarea, .modif-form select, .modif-form input, .modif-form image, .modif-form #video, .modif-form img {
+  margin : 0 auto;
+  width : 80%;
+}
+
+.modif-form label {
+  font-size : 1.5em;
+  padding-top : 1.5em;
+  padding-bottom : 0.5em;
+  text-align : center;
+}
+
+.modif-form #sample div {
+  background-color: white;
+  margin : 0 auto;
+  border : none;
+}
+
+.modif-form #sample label {
+  font-size : 1.5em;
+  margin : 0 auto;
+  display : block;
+}
+
+.modif-form .nicEdit-panelContain {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.modif-form .nicEdit-main {
+  display : block;
+  width : 100%;
+}
+
+.modif-form #video {
+  margin : 0 auto;
+  margin-bottom : 0.5em;
+  text-align : center;
+}
+.modif-form #video iframe {
+  width : 100%;
+}
+
+.modif-form .button {
+  display : flex;
+  flex-direction: row;
+  padding : 1.5em;
+  text-align : center;
+  margin : 2em auto;
+}
+.modif-form .sup {
+  margin : 0 auto;
+  margin-top : 0.8em;
+  width : 20%;
+  text-align : center;
+}
+.modif-form .sup i {
+  color : red;
+}
+.modif-form .sup input {
+  width : 10%;
+}
+
+
+/*/////////TABLEAU DES COORDONNEES/////////*/
+
+#coord {
+  text-align : center;
+  margin : 3em auto;
+  width : 70%;
+  border : 1px solid black;
+  padding : 1em;
+   border-collapse: collapse;
+}
+#coord caption {
+   font-size : 120%;
+   padding-bottom : 1em;
+   
+}
+
+#coord thead {
+  background-color: grey;
+  font-size : 120%;
+
+}
+
+#coord thead td {
+  padding : 0.5em;
+}
+
+#coord tbody tr {
+  border-bottom: 1px solid black;
+  padding : 0.5em;
+  margin : 1em auto;
+}
+
+#coord tr:nth-child(even) {
+  background-color : grey;
+}
+
+#coord td {
+  border : solid 1px black;
+}
+
+
+
+
+/*////////LES CARTES//////////*/
+
+#map {
+  margin : 0;
+  padding: 0;
+  width : 50%;
+  height: 250px;
+}
+
+/*/////////UPLOAD IMAGES//////////*/
+
+.label_fichier {
+  cursor: pointer;
+  font-weight: bold;
+}
+.label_fichier:hover {
+  color: #00b1ca;
+}
+
+#mon_fichier {
+  display: none;
+}
+
+/*//////SECTION CATALOGUE GENERAL////*/
+.mosaique ul {
+  margin : 0 auto;
+  padding : 1em 0;
+  display : flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #d4d6cd;
+}
+
+.mosaique ul li img {
+  width: 100%;
+}
+
+
+/*///////CATALOGUE PAR FAMILLE D'ALGUES/////////*/
+
+
+.introShow {
+  margin-bottom : 1em;
+}
+.showalgues {
+  display : flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.showalgues article {
+  display : flex;
+  flex-direction : column;
+  width : 100%;
+  padding: 0.5em;
+  padding-bottom : 4em;
+  margin : 1em auto;
+  text-align: justify;
+}
+
+.showalgues article:hover .hidden {
+  display : block;
+}
+
+.showalgues article img {
+  width : 100%;
+  max-height: 300px;
+}
+
+/*/////////////ADMIN////////////*/
+/*/////////////CREER UN ARTICLE////////*/
+#create {
+  display : flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom : 1px solid #4ab885;
+}
+
+#create h3, #create a {
+  width: 50%;
+}
+/*/////////////ADMIN////////////*/
+
+#message, #description, #utilisation, .preview, #map {
+  margin-left : 5%;
+}
+
+/*/////////////MODIFIER UN ARTICLE////////*/
+
+.modifText {
+  display : flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom : 1em;
+  border-bottom : 1px solid #4ab885;
+  padding : 0.8em;
+  background-color: white;
+}
+
+.modifText:nth-child(even) {
+  background-color : #d4d1c7;
+}
+
+
+.modifText article, .modifText a {
+  width : 50%;
+}
+
+
+
+/*/////////////ADMIN////////////*/
+/*/////////////BOUTON////////*/
+
+.btn-admin {
+  display : block;
+  color: white;
+  padding : 0.6em;
+  margin : 1em auto;
+  max-width: 80px;
+  max-height: 15px;
+  background-color: #4ab885;
+  border-radius: 5%;
+  text-align : center;
+  margin : 0 auto;
+}
+
+.btn-last {
+  margin-left : 1em;
+}
+
+/*/////////////ADMIN////////////*/
+/*/////////////GERER LES UTILISATEURS ////////*/
+.users ul {
+  display : flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin : 0 auto;
+}
+.users ul li {
+  width : 25%;
+  margin : 1em;
+  padding : 1em;
+}
+
+
+/*/////////////ADMIN////////////*/
+/*/////////////MODIFIER LES ALGUES ////////*/
+
+
+.listimg {
+  width : 70px;
+}
+
+
+/*//////////PAGE BLOG//////////*/
+
+.news-article article {
+  padding : 0.5em;
+  background-color: #d4d6cd;
+  margin-bottom: 1em;
+}
+.news-article article h6 {
+  color : red;
+  font-size : 1em;
+  margin : 0;
+}
+.news-article article h4 {
+  border-bottom: 1px solid red;
+  font-size: 1.5em;
+}
+.news-article article .medias {
+  width: 100%;
+  margin : 0.5em;
+  margin-left : 1em;
+}
+.news-article article .medias iframe {
+  width : 100%;
+  max-height: 220px;
+  margin : 0.5em;
+}
+.news-article article .medias img {
+  width : 100%;
+  margin : 0.5em;
+}
+.news-article article p {
+  text-align : justify;
+}
+
+.news-article .sign {
+  font-weight: bold;
+  text-align: right;
+}
+.news-article .date {
+  font-size: 0.7em;
+  text-align: right;
+}
+
+
+
+
+/*////////FICHE UNE ALGUE////////*/
+
+
+#onealgue figure {
+  margin : 0 auto;
+  width: 95%;
+  padding : 0.5em;
+  margin-bottom: 1em;
+}
+
+#onealgue img {
+  width : 100%;
+}
+
+
+#oneAlgue #map {
+  width : 95%;
+  margin : 0 auto;
+  padding : 0.5em;
+  max-height: 300px;
+}
+
+#oneAlgue #map .leaflet-container {
+  width : 100%;
+}
+
+.lien {
+  color : #31a590;
+}
+
+
+
+/*//////////FOOTER////////////*/
+footer {
+  background-color: #18c792;
+  border-top : 3px solid #107758;
+  padding : 2em;
+}
+
+.nav-footer {
+  display : flex;
+  flex-direction : column;
+  justify-content: space-between;
+}
+
+.nav-footer li {
+  width: 100%;
+}
+.nav-footer li a {
+  width : 100%;
+  margin : 0.6em auto;
+  text-align : center;
+  margin : 0.7em auto;
+  padding : 0.5em;
+  border-top: 0px solid transparent;
+}
+
+.nav-footer i {
+  margin-right: 1em;
+}
+
+
+/*/////////////////////////////////////////////////////
+/////////PASSAGE EN ECRAN TABLETTE ///////////////////
+////////////////////////////////////////////////////*/
+
+
+@media only screen and (min-width: 700px) {
+    html {
+      font-size: 100%;
+   }
+/*/////////HEADER////////*/
+   
+   #header-title {
+    display : flex;
+    flex-direction : row;
+    margin : 0 2em;
+   }
+
+
+   #header-title h1 {
+    display : block;
+   }
+   
+   #header-title img {
+    max-width : 200px;
+   }
+
+/*/////////NAVIGATION HEADER////////*/
+  
+
+  #nav-header-mobile i {
+    display : none;
+   }
+   #nav-head {
+    display : block;
+   }
+   #nav-header-mobile {
+    width : 100%;
+   }
+   #nav-head a {
+    font-weight: normal;
+    font-size : initial;
+   }
+  nav ul {
+    display : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    margin : 0 auto;
+    padding : 0;
+    width : 100%;
+  }
+  nav ul li {
+    margin : 0 auto;
+    text-align : center;
+    padding : 0;
+    margin-bottom : 0.5rem;
+  }
+
+  /*/////////FOOTER///////////*/
+  .nav-footer {
+    flex-direction: row;
+  }
+
+/*/////////SECTION CATALOGUE GENERAL/////*/
+
+  .mosaique ul li {
+    width: 32%;
+    margin : 0 auto;
+  }
+
+/*///////TAILLE CARTE POUR FORMULAIRE//////// */
+  .modif-form #map {
+    max-width : 600px;
+    max-height: 340px;
+  } 
+
+/*///////CATALOGUE PAR FAMILLE D'ALGUES/////////*/
+
+  .showalgues {
+    display : flex;
+    flex-direction: row;
+  }
+
+  .showalgues article {
+    width : 50%;
+  }
+
+  .showalgues article img {
+    width: 100%;
+    max-height: 400px;
+  }
+
+
+/*//////FICHE UNE ALGUE ///////////*/
+
+  #oneAlgue {
+    float : right;
+    width: 60%;
+    padding : 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0;
+    margin-bottom: 0.3em;
+  }
+
+
+/*////////GESTION CARTE///////////*/
+   
+    #map {
+      height: 300px;
+    }
+
+/*//////////PAGE BLOG//////////*/
+
+  .news-article article .medias {
+    float : right;
+    width: 50%;
+  }
+
+  .intro figure { 
+    float: right;
+    width : 40%;
+    margin : 1em;
+    margin-bottom : 0.5em;
+  }
+
+/*/////////HOME/////////*/
+
+  .intro figure figcaption { 
+    margin-left: 0;
+  }
+
+  
+  .enviro div {
+    width: 100%;
+  }
+  .enviro figure {
+    float : right;
+    margin-left : 0.5em;
+    width: 45%;
+    display : flex;
+    flex-direction: column;
+  }
+  .enviro figure img {
+    width: 100%;
+  }
+
+  .enviro div:last-child {
+    display : flex;
+    flex-direction : row;
+    justify-content: center;
+  }
+  .enviro div:last-child figure {
+    margin : 0;
+    width: 100%;
+  }
+}
+
+/*//////////////////////////////////////////////////
+///////////////PASSAGE EN GRAND ECRAN///////////////////
+/////////////////////////////////////////////////////*/
+
+@media only screen and (min-width: 1000px) {
+  header {
+    background-image: url(../images/ernodesmis-verticillata.jpg);
+  }
+
+/*///////HEADER////////*/
+  #nav-head .deploi:hover ul li {
+    width: 50%;
+  }
+
+
+/*///SECTION CATALOGUE DE LA HOME ET CATALOGUE PAGE CATALOGUE////////*/
+
+  .catalogue {
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .catalogue p :first-child {
+    width : 100%;
+  }
+  .catalogue article {
+    width : 31%;
+  }
+  .catalogue article p {
+    text-align: justify;
+    margin : 0;
+    padding : 0.2em;
+  }
+
+ /*//////SECTION CATALOGUE FICHE 1 ALGUE ///////////*/
+
+  #oneAlgue {
+    width: 50%;
+  }
+
+  /*//////////PAGE BLOG//////////*/
+
+  .news-article article .medias iframe {
+    max-height: 340px;
+  }
+}     

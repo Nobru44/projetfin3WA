@@ -1,0 +1,30 @@
+<section class="introShow">
+	<h3>La liste des <?= $categoryName['category_name']?></h3>
+	<p>Notre catalogue compte <?= $nombre[0]['COUNT(*)'] ?> espèce(s) d'<?= $categoryName['category_name']?> vérifiées.
+		<a href="catalogue.php">Retour au menu pour choisir une autre famille d'algues.</a>
+	</p>
+</section>
+<section class="showalgues">
+
+<?php foreach($listAlgues AS $algue): ?>
+		<article>
+			<h4>Nom : <?= $algue['name']?></h4>
+			<figure>
+				<img src="<?= $algue['image_url']?>">
+				<figcaption>Photo : <?= ucfirst($algue['firstname']) . " " . ucfirst($algue['lastname']) ?>.
+				</figcaption>
+			</figure>
+
+
+
+			<div class="hidden">
+
+<?php $algue['description'] = substr($algue['description'], 0, 300); ?>
+
+				<p><strong>Description : </strong><?= $algue['description']?> [...]</p>
+				<a class="btn" href="showOneAlgue.php?id=<?=$algue['id_algue']?>"><i class="fas fa-plus-circle"></i> Plus</a>
+			</div>
+		</article>
+<?php endforeach ?>
+
+</section>

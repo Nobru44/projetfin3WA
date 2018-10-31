@@ -1,0 +1,43 @@
+
+
+<h2><i class="fas fa-pen-alt"></i> Créer un article</h2>
+<form class="modif-form" action="addArticleNew.php" method="POST" enctype="multipart/form-data">
+	<label>Titre</label>
+	<textarea name="title" cols="5" rows="2"></textarea>
+	
+	<label>Texte</label>
+	<textarea name="content" cols="60" rows="10" wrap="hard"></textarea>
+
+	<label>Categorie</label>
+	<select name="id_category">
+		<option value="1">L'image du mois</option>
+		<option value="2">Documentation</option>
+		<option value="3">Insolite</option>
+		<option value="4">Recherche</option>
+		<option value="5">Environnement</option>
+		<option value="6">Toxicologie</option>
+	</select>
+
+	<label for="mon_fichier2">Photo</label>
+	<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+    <input type="file" name="mon_fichier2" id="mon_fichier2" accept=".jpg, .jpeg" multiple/>
+
+    <label for="title_photo">Nom de la photo</label>
+	<input type="text" name="title_photo" id="title_photo">
+
+
+
+	<label class="" for="vidéo">Adresse de la vidéo</label>
+    <input type="text" name="url_media" id="url_media"/>
+   
+
+	<label>Auteur</label>
+	<select name="id_author">
+		<option value="1">Jean-Pascal Quod</option>
+		<option value="2">La rédaction</option>
+	</select>
+	<div class="envoi">
+		<button class="btn-submit">Valider</button>
+		<button class="btn-reset" type="reset">Annuler</button>
+	</div>
+</form>

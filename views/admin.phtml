@@ -1,0 +1,99 @@
+	
+<h2><i class="fas fa-cogs"></i> Administration</h2>
+		
+<section class="post">
+
+
+	<div id="create">
+		<h3><i class="fas fa-pen-alt"></i> Créer un article</h3>
+		<a class="btn-admin" href="createArticle.php">Créer</a>
+	</div>
+	<div>
+		<h3><i class="fas fa-eraser"></i> Modifier un article</h3>
+					
+<?php foreach ($articlesList as $article):?>
+		<div class="modifText">
+			<article>
+				<h4>Titre : <?= $article['title']?></h4>
+				<h5>Catégorie : <?= $article['name_category']?></h5>
+<?php $article['content'] = substr($article['content'], 0, 500); ?>		
+				<p><strong>Texte :</strong> <?= $article['content']; ?>[...]</p>
+				<p>Auteur : <?= $article['firstname'] ?> <?= $article['lastname'] ?></p>
+				<p>Publié le : <strong><?= $article['updated_at']?></strong></p>		
+			</article>
+			<a class="btn-admin" href="modifArticle.php?id=<?=$article['id_article']?>">Modifier</a>
+		</div>
+<?php endforeach ?>
+					
+	</div>
+</section>
+
+<section class="listAlgues">
+		<h3><i class="fas fa-eraser"></i> Modifier une algue</h3>
+		<h4>A valider</h4>
+<?php   foreach ($alguesList as $algue):?>
+			<div class="modifText">
+				<article>
+					<h5><strong>Nom : </strong><?= $algue['name']?></h5>
+<?php $algue['description'] = substr($algue['description'], 0, 500); ?>
+					<p><strong>Description : </strong><?= $algue['description']?> [...]</p>
+					<img class="listimg" src="<?= $algue['image_url']?>"/>
+					<p><strong>Identifié par : </strong><?= $algue['firstname'] ?> <?= $algue['lastname'] ?></p>
+					<p><strong>Statut : </strong>En cours de <?= $algue['status'] ?></p>
+					<p>Enregistrée le : <strong><?= $algue['updated_at']?></strong></p>
+				</article>
+				<a class="btn-admin" href="modifAlgue.php?id=<?=$algue['id_algue']?>">Modifier</a>
+			</div>
+<?php endforeach ?>
+		
+		<h4>Validées</h4>
+<?php   foreach ($alguesListVerif as $algue):?>
+			<div class="modifText">
+				<article>
+					<h5><strong>Nom : </strong><?= $algue['name']?></h5>
+<?php $algue['description'] = substr($algue['description'], 0, 500);?>
+					<p><strong>Description : </strong><?= $algue['description']?> [...]</p>
+					<img class="listimg" src="<?= $algue['image_url']?>"/>
+					<p><strong>Identifié par : </strong><?= $algue['firstname'] ?> <?= $algue['lastname'] ?></p>
+					<p><strong>Statut : </strong><?= $algue['status'] ?></p>
+					<p>Enregistrée le : <strong><?= $algue['updated_at']?></strong></p>
+				</article>
+				<a class="btn-admin" href="modifAlgue.php?id=<?=$algue['id_algue']?>">Modifier</a>
+			</div>
+<?php endforeach ?>
+</section>
+
+<section class="users">
+		<h3><i class="fas fa-users"></i> Gérer les utilisateurs</h3>
+		
+<?php   foreach ($userList as $user):?>
+			<div class="modifText">
+				<article>
+					<p><strong>Mail : </strong><?= $user['mail']?></p>
+					<p><strong>Nom : </strong><?= $user['firstname'] ?> <?= $user['lastname'] ?></p>
+					<p><strong>Habilitation : </strong><?= $user['habilitation'] ?></p>
+					<p>Enregistré le :<strong><?= $user['created_at']?></strong></p>
+				</article>	
+				<a class="btn-admin" href="modifUser.php?id=<?=$user['id_user']?>">Modifier</a>
+			</div>		
+<?php endforeach ?>
+</section>
+
+<section class="messages">
+		<h3><i class="fas fa-envelope"></i> Les messages</h3>
+		
+<?php   foreach ($messagesList as $message):?>
+			<div class="modifText">
+				<article>
+					<p><strong>Mail : </strong><?= $message['mail']?></p>
+					<p><strong>Message : </strong><?= $message['message'] ?></p>
+					<p><strong>Date d'envoi : </strong><?= $message['created_at'] ?></p>
+					<p><strong>Nom : </strong><?= $message['name'] ?></p>
+					<p><strong>Statut : </strong><?= $message['status']?></p>
+				</article>	
+				<a class="btn-admin" href="modifMessage.php?id=<?=$message['id_message']?>">Classer</a>
+				<a class="btn-admin btn-last" href="delete.php?id=<?=$message['id_message']?>">Supprimer</a>
+			</div>		
+<?php endforeach ?>
+
+</section>

@@ -1,0 +1,28 @@
+<h2><i class="fas fa-cogs"></i> Administration</h2>
+
+<h3><i class="fas fa-users"></i> Modifier un utilisateur</h3>
+
+<form class="modif-form" action="processModifUser.php" method="POST">
+
+	<input type="hidden" name="id_user" value="<?=$user['id_user']?>">
+	<label>Mail</label>
+	<input type="text" name="mail" value="<?=$user['mail']?>">
+	<label>Prénom</label>
+	<input type="text" name="firstname" value="<?=$user['firstname']?>">
+	<label>Nom</label>
+	<input type="text" name="lastname" value="<?=$user['lastname']?>">
+	<label>Habilitation</label>
+	<select name="habilitation">
+		<option value="guest">Guest</option>
+		<option value="admin">Admin</option>
+	</select>
+<div class="envoi">
+	<button class="btn-submit">Valider</button>
+	<button class="btn-reset" type="reset">Annuler</button>
+</div>
+
+</form>
+<form class="modif-form" action="delete.php" method="POST">
+		<input type="hidden" name="id_user" value="<?=$user['id_user']?>">
+		<button class="btn-delete" type="submit">Supprimer</button>
+</form>

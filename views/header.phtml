@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>DeNaturAlgae</title>
+		<meta charset="utf-8">
+		
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+		<link rel="stylesheet" type="text/css" href="public/css/main.css">
+		<link rel="stylesheet" type="text/css" href="public/css/normalize.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				crossorigin="anonymous"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
+	</head>
+	<body>
+	
+		<header>    
+					
+			<div id="nav-header-mobile"><i class="fas fa-bars fa-5x"></i>
+
+				<nav id="nav-head">
+					<ul>
+                        <li class="<?= $page == 'home' ? 'selected' : ''?>" >
+							<a href="home.php">Accueil</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+						<li class="deploi <?= $page == 'catalogue' ? 'selected' : ''?> <?= $page == 'showAlgues' ? 'selected' : ''?>">
+							<a href="catalogue.php">Catalogue</a>
+							<i class="fas fa-caret-down"></i>
+							<ul class="hidden">
+								<li>
+									<a href="showAlgues.php?id=1">Vertes</a>
+								</li>
+								<li>
+									<a href="showAlgues.php?id=2">
+										Rouges</a>
+								</li>
+								<li>
+									<a href="showAlgues.php?id=3">Brunes</a>
+								</li>
+							</ul>
+						</li>
+						<li class="<?= $page == 'news' ? 'selected' : ''?>" >
+							<a href="news.php">Blog</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+						
+	<?php if (empty($_SESSION['user'])) :?>
+							
+						<li class="<?= $page == 'login' ? 'selected' : ''?>">
+							<a href='login.php'>Login</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+
+						<li class="<?= $page == 'createUser' ? 'selected' : ''?>" >
+							<a href='createUser.php'>Devenez observateur</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+
+	<?php	elseif ($_SESSION['user']['habilitation'] === 'admin'):?>
+							
+						<li class="<?= $page == 'soumettreAlgue' ? 'selected' : ''?>">
+							<a href='formulaire.php'>Soumettre une algue</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+						<li  >
+							<a href='logout.php'>Logout</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+                        <li class="<?= $page == 'admin' ? 'selected' : ''?>">
+							<a href='admin.php'>Administration</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+
+
+	<?php 	elseif ($_SESSION['user']['habilitation'] === 'guest'):?>
+						
+						<li class="<?= $page == 'soumettreAlgue' ? 'selected' : ''?>" >
+							<a href='formulaire.php'>Soumettre une algue</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+						<li class="<?= $page == 'logout' ? 'selected' : ''?>">
+							<a href='logout.php'>Logout</a>
+							<i class="fas fa-caret-down"></i>
+						</li>
+						
+	<?php endif ?>
+
+					</ul>
+				</nav>
+			</div>
+			<div id="header-title">
+				<img src="public/medias/logoDNA.jpg" alt="Logo DeNaturAlgae">  
+				<h1>Le site dédié aux algues</h1>
+			</div>
+	</header>
+	<main class="container">
+			<div class="flashbag">
+<?php if(!empty($_SESSION['messages'])) {
+		$messages = $_SESSION['messages'];
+		foreach($messages AS $key => $message):?>
+				<p><?= $message ?></p>
+<?php 	endforeach;
+
+		unset($_SESSION['messages']);
+	}
+?>
+			</div>						
