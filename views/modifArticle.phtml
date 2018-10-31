@@ -27,7 +27,7 @@
 	<?php if(!empty($article['url_photo'])):?>
 
 			<label>Photo</label>
-			<img class="display-image" src="<?= $article['url_photo']?>">
+			<img class="display-image" src="<?= $article['url_photo']?>" alt="$article['title_photo">
 			<input type="hidden" id="url_photo" name="url_photo" value="<?=$article['url_photo']?>">
 			<div class="sup">
 				<i class="fas fa-trash-alt"></i>
@@ -54,7 +54,7 @@
 		<div class="sup"><i class="fas fa-trash-alt"></i>
 		<input type="checkbox" id="sup-video"></div> 
 	<?php else :?>
-		<label for="vidéo">Rentrez l'adresse de la vidéo</label>
+		<label for="url_media">Rentrez l'adresse de la vidéo</label>
     	<textarea name="url_media" id="url_media"></textarea>
 
 	<?php endif ?>
@@ -83,6 +83,6 @@
 		<input type="hidden" name="id_article" value="<?=$article['id_article']?>">
 		<button class="btn-delete" type="submit">Supprimer</button>
 </form>
-<script type="text/javascript" src="public/js/donnees.js"></script>
-<script type="text/javascript" src="public/js/functions.js"></script>
-<script type="text/javascript" src="public/js/modif.js"></script>
+<script src="public/js/donnees.js"></script>
+<script src="public/js/functions.js"></script>
+<script src="public/js/modif.js"></script>
