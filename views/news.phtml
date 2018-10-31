@@ -9,7 +9,7 @@
 	<?php if(!empty($article['url_media']) AND !empty($article['url_photo'])):?>
 				<div class="medias">
 					<?=$article['url_media']?>
-					<img class="news-images" src="<?=$article['url_photo']?>">
+					<img class="news-images" src="<?=$article['url_photo']?>" alt="<?=$article['title_photo']?>">
 				</div>
 	<?php elseif (!empty($article['url_media']) AND empty($article['url_photo'])):?>	
 				<div class="medias">
@@ -17,7 +17,7 @@
 				</div>
 	<?php elseif (!empty($article['url_photo']) AND empty($article['url_media'])):?>	
 				<div class="medias">
-					<img class="news-images" src="<?=$article['url_photo']?>">
+					<img class="news-images" src="<?=$article['url_photo']?>" alt="<?=$article['title_photo']?>">
 				</div>
 	<?php endif ?>
 			<p><?=$article['content']?></p>
