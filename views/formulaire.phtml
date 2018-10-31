@@ -4,19 +4,19 @@
 <fieldset>
 	<legend class="legend">Description</legend>
 	<form class="form" method="POST" action="processAdd.php" enctype="multipart/form-data">
-		
-			<legend></legend>
 		<ul>
-			<input type="hidden" name="id_author" value="<?php echo($_SESSION['user']['id_user']); ?>">
 			<li>
-				<label for="observed_at">Date de l'observation <span>*</span></label>
+				<input type="hidden" name="id_author" value="<?php echo($_SESSION['user']['id_user']); ?>">
+			</li>
+			<li>
+				<label for="date">Date de l'observation <span>*</span></label>
 				<input type="date" id="date" name="observed_at" min="1990-01-01" max="2020-04-30" required="required">
 			</li>
 			<p id="error_date"></p>
 			<li>
 				<label class="label_fichier" for="mon_fichier">Fichier (format JPG | max. 1 Mo) <span>*</span></label>
      				<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     				<input type="file" name="mon_fichier" id="mon_fichier" accept=".jpg, .jpeg"required="required" />
+     				<input type="file" name="mon_fichier" id="mon_fichier" accept=".jpg, .jpeg" required="required" />
      				<p class="preview">Aucun fichier sélectionné</p> 
      		</li>
      			
@@ -29,7 +29,7 @@
 			<li>
 				<label for="profondeur">A quelle profondeur ?<span> *</span></label>
 				<select id="profondeur" name="profondeur" required="required">
-					<option value="none">Je ne sais pas</option>
+					<option value="">Je ne sais pas</option>
 					<option value="sur la berge">Sur la berge</option>
 					<option value="en surface">En surface</option>
 					<option value="de 0 à 5m">Entre 0 et 5 m</option>
@@ -56,6 +56,7 @@
 			<li>
 				<label for="category">A votre avis, à quelle catégorie appartient votre algue ? <span> *</span></label>
 				<select id="category" name="category_id" required="required">	
+					<option value="">Aucune idée</option>
 					<option value="4">Je ne sais pas</option>
 					<option value="1">Verte</option>
 					<option value="2">Rouge</option>
@@ -69,7 +70,7 @@
 			</li>
 			<li>
 				<label for="description">Faites-nous une description sommaire du lieu et de son aspect</label>
-				<textarea type="textarea" rows="10" cols="78" id="description" name="description"></textarea>
+				<textarea rows="10" cols="78" id="description" name="description"></textarea>
 			</li>
 			
 
@@ -77,11 +78,11 @@
 <?php if (!empty($_SESSION['user']) AND $_SESSION['user']['habilitation'] === 'admin'):?>
 			<li>
 				<label for="utilisation">Quels possibles usages ?</label>
-				<textarea rows="5" cols="78" id="utilisation" name="utilisation"></textarea>
+				<textarea id="utilisation" name="utilisation"></textarea>
 			</li>
 			<li>
 				<label for="url_info">Fiche wikipédia</label>
-				<input type="textarea" rows="50 cols="100" id="url_info" name="url_info">
+				<textarea id="url_info" name="url_info"></textarea>
 			</li>
 <?php endif ?>
 
@@ -97,8 +98,7 @@
  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
    crossorigin=""></script> 
-<script type="text/javascript" src="public/js/donnees.js"></script>
-<script type="text/javascript" src="public/js/functions.js"></script>
-<script type="text/javascript" src="public/js/map.js"></script>
-<script type="text/javascript" src="public/js/soumission.js"></script>
-
+<script src="public/js/donnees.js"></script>
+<script src="public/js/functions.js"></script>
+<script src="public/js/map.js"></script>
+<script src="public/js/soumission.js"></script>
