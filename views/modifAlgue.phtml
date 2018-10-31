@@ -22,12 +22,12 @@
 		<label>Description</label>
 		<textarea id="description" name="description" cols="60" rows="10" wrap="hard"><?=$algue['description']?></textarea>
 		<label>Quels usages</label>
-		<textarea id="utilisation" name="utilisation" cols="60" rows="10" wrap=""><?=$algue['utilisation']?></textarea>
+		<textarea id="utilisation" name="utilisation" cols="60" rows="10" wrap="hard"><?=$algue['utilisation']?></textarea>
 		 <div id="myPanel"></div>
 	</div>
 <?php if(!empty($algue['image_url'])):?>
 		<label>Photo</label>
-		<img class="display-image" src="<?= $algue['image_url']?>">
+		<img class="display-image" src="<?= $algue['image_url']?>" alt="title_photo">
 		<input type="hidden" id="url_photo" name="image_url" value="<?=$algue['image_url']?>">
 		
 		<textarea id="title_photo" name="title_photo"><?=$algue['title_photo']?></textarea>
@@ -38,9 +38,6 @@
 			<input type="checkbox" id="sup-photo">
 		</div>
 		
-
-
-
 
 <?php else :?>
 		<label class="label_fichier" for="mon_fichier3">Photo (format JPG | max. 1 Mo)</label>
@@ -61,15 +58,13 @@
 		<option value="4">Indéterminée</option>
 	</select>
 	<label>A quel endroit ?</label>  
-	  <div type="hidden">
-<script> var result = <?php echo($json); ?>;
-</script>
-
-	  </div>
-	  <div id="map"></div>
-
-	  <input type="hidden" id="lat" name="lat">
-	  <input type="hidden" id="long" name="long">
+	<div class="hidden">
+		<script> var result = <?php echo($json); ?>;
+		</script>
+	</div>
+	<div id="map"></div>
+	<input class="hidden" id="lat" name="lat">
+	<input class="hidden" id="long" name="long">
 	
 	<label>Fiche wikipédia</label>
 	<input type="text" name="url_info" value="<?=$algue['url_info']?>">
@@ -97,8 +92,16 @@
 </div>
 <?php if(!empty($listCoord)):?>
 	<table id="coord">
-	       <caption>Liste des signalements pour cette algue</caption>
-               <tbody>
+	    <caption>Liste des signalements pour cette algue</caption>
+	    <thead>	
+			<tr>
+				<td>Signalement</td>
+				<td>Latitude</td>
+				<td>Longitude</td>
+				<td></td>
+			</tr>
+		</thead>
+         <tbody>
 <?php foreach($listCoord AS $coord):?>
 			<tr>
 				<td><?= $coord['id_coord']?></td>
@@ -108,14 +111,7 @@
 			</tr>
 <?php endforeach ?>
 		</tbody>
-		<thead>	
-			<tr>
-				<td>Signalement</td>
-				<td>Latitude</td>
-				<td>Longitude</td>
-				<td></td>
-			</tr>
-		</thead>
+		
 	</table>
 <?php	endif ?>
 
@@ -123,7 +119,7 @@
    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
    crossorigin=""></script>
 
-<script type="text/javascript" src="public/js/donnees.js"></script>
-<script type="text/javascript" src="public/js/functions.js"></script>
+<script src="public/js/donnees.js"></script>
+<script src="public/js/functions.js"></script>
 <script src="public/js/mapValidation.js"></script>
-<script type="text/javascript" src="public/js/modif.js"></script>	
+<script src="public/js/modif.js"></script>	
