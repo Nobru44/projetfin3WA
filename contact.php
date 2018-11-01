@@ -8,9 +8,9 @@ require_once 'bootstrap.php';
 
 if(!empty($_POST)) {
 	$_SESSION['messages'] = [];
-	$_POST['name'] = strip_tags($_POST['name']);
-	$_POST['mail'] = strip_tags($_POST['mail']);
-	$_POST['message'] = strip_tags($_POST['message']);
+	$_POST['name'] = htmlspecialchars($_POST['name']);
+	$_POST['mail'] = htmlspecialchars($_POST['mail']);
+	$_POST['message'] = htmlspecialchars($_POST['message']);
 
 	switch($_POST) {
 		case(empty($_POST['mail']) OR $_POST['mail'] == "") :
